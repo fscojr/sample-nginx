@@ -28,12 +28,12 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag fscojr/nginx:$IMAGE_TAG
       env:
-        IMAGE_TAG:  ${{ steps.commit.output.short }}
+        IMAGE_TAG:  ${{ steps.commit.outputs.short }}
 
     - name: Build the Docker image
       run: docker push fscojr/nginx:$IMAGE_TAG
       env:
-        IMAGE_TAG: ${{ steps.commit.output.short }}
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
       
 
     - name: List image docker
