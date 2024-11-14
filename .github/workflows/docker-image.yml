@@ -89,9 +89,9 @@ jobs:
         #git config user.name "github-actions[bot]"
         #git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add .
-        git commit "Update $REPOSITORY $IMAGE_TAG"
+        git commit -m "Update $REPOSITORY $IMAGE_TAG"
         git push
-       
+       #
 
 
         
