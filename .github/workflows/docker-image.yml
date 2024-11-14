@@ -65,6 +65,8 @@ jobs:
 
     - name: Change Image Ref.
       run:
+        ls -l 
+        ls -l ../
         sed -i "s/#VERSION#/$IMAGE_TAG/g" app-code/.k8s/production.yml 
         cat app-code/.k8s/production.yml 
 
