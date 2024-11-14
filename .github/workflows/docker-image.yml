@@ -87,7 +87,7 @@ jobs:
     - name: Update file Chart
       run: | 
         mkdir -p  apps-charts/$REPOSITORY
-        cp app-code/Chart.yaml apps-charts/$REPOSITORY/
+        cp app-code/.k8s/Chart.yaml apps-charts/$REPOSITORY/
         cp app-code/.k8s/production.yml 
 
     - name: Push  apps-charts
