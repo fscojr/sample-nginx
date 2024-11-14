@@ -41,6 +41,8 @@ jobs:
       commit: ${{ steps.commit.outputs.short }}
 
   cid:
+    env:
+      IMAGE_TAG: ${{ needs.build.outputs.commit }}
     runs-on: ubuntu-latest
     needs: build
     steps:
