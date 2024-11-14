@@ -44,6 +44,7 @@ jobs:
         repository: 'fscojr/apps-charts'
     
     - name: Update Charts
-      run: ls -la
-
+      env:
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
+      run: echo $IMAGE_TAG
     
