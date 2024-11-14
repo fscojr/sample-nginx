@@ -41,8 +41,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        owner: fscojr
-        repository: 'apps-charts'
+        repository: 'fscojr/apps-charts'
     
     - name: Update Charts
       run: ls -la
