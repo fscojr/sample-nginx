@@ -64,7 +64,7 @@ jobs:
       run: echo $IMAGE_TAG
 
     - name: Change Image Ref.
-      run:
+      run: |
         ls -l 
         ls -l ../
         sed -i "s/#VERSION#/$IMAGE_TAG/g" app-code/.k8s/production.yml 
