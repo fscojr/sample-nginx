@@ -34,7 +34,15 @@ jobs:
       run: docker push fscojr/nginx:$IMAGE_TAG
       env:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      
 
-    - name: List image docker
-      run: docker image ls 
+  cid:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: 'https://github.com/fscojr/apps-charts.git'
+    
+    - name: Update Charts
+      run: ls -l 
+
+    
