@@ -88,7 +88,7 @@ jobs:
       run: | 
         mkdir -p  apps-charts/$REPOSITORY
         cp app-code/.k8s/Chart.yaml apps-charts/$REPOSITORY/
-        cp app-code/.k8s/production.yml 
+        cp app-code/.k8s/production.yml apps-charts/$REPOSITORY/
 
     - name: Push  apps-charts
       run: |
