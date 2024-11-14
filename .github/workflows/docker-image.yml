@@ -34,6 +34,8 @@ jobs:
       run: docker push fscojr/nginx:$IMAGE_TAG
       env:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
+    outputs:
+      commit: ${{ steps.commit.outputs.short }}
 
   cid:
     runs-on: ubuntu-latest
@@ -45,6 +47,6 @@ jobs:
     
     - name: Update Charts
       env:
-        IMAGE_TAG: ${{ steps.commit.outputs.short }}
+        IMAGE_TAG: ${{ needs.build.outputs.commit }}
       run: echo $IMAGE_TAG
     
