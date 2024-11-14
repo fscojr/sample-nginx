@@ -42,6 +42,10 @@ jobs:
     needs: build
     steps:
     - uses: actions/checkout@v4
+      name: Checkout code app
+
+    - uses: actions/checkout@v4
+      name: Checkout code charts
       with:
         repository: 'fscojr/apps-charts'
     
@@ -49,4 +53,9 @@ jobs:
       env:
         IMAGE_TAG: ${{ needs.build.outputs.commit }}
       run: echo $IMAGE_TAG
+
+    - name: list
+      run: |
+        ls -l
+        ls -l ../
     
