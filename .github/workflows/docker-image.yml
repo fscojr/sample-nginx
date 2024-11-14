@@ -82,14 +82,12 @@ jobs:
         cp app-code/Chart.yaml apps-charts/$REPOSITORY/
 
     - name: Push  apps-charts
-      uses: actions/checkout@v4
       run: |
         cd apps-charts
         ls -l 
         #git config user.name "github-actions[bot]"
         #git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add .
-        git status
         git push
        
 
