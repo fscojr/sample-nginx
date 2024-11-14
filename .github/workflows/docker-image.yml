@@ -63,9 +63,14 @@ jobs:
         IMAGE_TAG: ${{ needs.build.outputs.commit }}
       run: echo $IMAGE_TAG
 
+    - name: Change Image Ref.
+      run:
+        sed -i "s/#VERSION#/$IMAGE_TAG/g" app-code/.k8s/production.yml 
+        cat app-code/.k8s/production.yml 
+
     - name: Create Chart
       run: |
-        cd  app-code/
+        cd  app-code/.k8s/
         cat > Chart.yaml <<EOL
         apiVersion: v2
         dependencies:
@@ -81,6 +86,7 @@ jobs:
       run: | 
         mkdir -p  apps-charts/$REPOSITORY
         cp app-code/Chart.yaml apps-charts/$REPOSITORY/
+        cp app-code/.k8s/production.yml 
 
     - name: Push  apps-charts
       run: |

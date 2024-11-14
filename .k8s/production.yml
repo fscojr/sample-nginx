@@ -1,0 +1,6 @@
+firedev:
+  general:
+    environment: production
+    repoName: aegea-te-backend
+    repoGroup: sistemas-internos
+    version: #VERSION#
