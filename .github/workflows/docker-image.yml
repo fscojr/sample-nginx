@@ -43,11 +43,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       name: Checkout code app
+      with:
+        path: app-code
 
     - uses: actions/checkout@v4
       name: Checkout code charts
       with:
         repository: 'fscojr/apps-charts'
+        path: apps-charts
     
     - name: Update Charts
       env:
@@ -58,4 +61,5 @@ jobs:
       run: |
         ls -l
         ls -l ../
+        ls -l ../../
     
