@@ -16,4 +16,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      #run: ls -l 
+
+    - name: List image docker
+      run: docker image ls 
+    - name: Push image
+      run: ls -l 
