@@ -67,7 +67,7 @@ jobs:
       run: |
         ls -l 
         ls -l ../
-        sed -i "s/#VERSION#/$IMAGE_TAG/g" app-code/.k8s/production.yml 
+        sed -i "s/#VERSION#/1.0-$IMAGE_TAG/g" app-code/.k8s/production.yml 
         cat app-code/.k8s/production.yml 
 
     - name: Create Chart
@@ -81,7 +81,7 @@ jobs:
           version: 1.0.0
         description: FireDev apps
         name: $REPOSITORY
-        version: $IMAGE_TAG
+        version: 1.0-$IMAGE_TAG
         EOL
 
     - name: Update file Chart
