@@ -76,10 +76,10 @@ jobs:
         cat > Chart.yaml <<EOL
         apiVersion: v2
         dependencies:
-        - name: firedev
+        - name: itti
           repository: file://../.helm/apps_templates
           version: 1.0.0
-        description: FireDev apps
+        description: itti apps
         name: $REPOSITORY
         version: 1.0-$IMAGE_TAG
         EOL
